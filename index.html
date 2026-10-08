@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Jaya! ✨❤️ A Special Surprise</title>
+  <meta name="description"
+    content="A magical, elegant birthday surprise dedicated to the wonderful Jaya. Wishing you joy, love, and endless happiness! ❤️🎂">
+
+  <!-- Google Fonts: Great Vibes, Outfit, Playfair Display, Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Floating Background Ambient Canvas -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Confetti & Fireworks Celebration Canvas -->
+  <canvas id="celebrationCanvas"></canvas>
+
+  <!-- Floating Music Player Control -->
+  <div class="music-pill" id="musicPlayer">
+    <button class="music-btn" id="musicToggleBtn" aria-label="Toggle Music" title="Play / Mute Birthday Music">
+      <span class="music-icon" id="musicIcon">🎵</span>
+      <div class="music-equalizer" id="musicEqualizer">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <span class="music-text" id="musicStatusText">Play Music</span>
+    </button>
+    <audio id="bgAudio" loop preload="auto">
+      <source src="assets/birthday-song.mp3" type="audio/mpeg">
+      <source src="assets/birthday-song.mp3" type="audio/wav">
+    </audio>
+  </div>
+
+  <!-- Floating Navigation Bar -->
+  <header class="glass-header" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-heart">❤️</span>
+        <span class="brand-name">Jaya's Day</span>
+        <span class="brand-sparkle">✨</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active"><span>❤️</span> Home</a>
+        <a href="#reveal" class="nav-link"><span>💖</span> Special</a>
+        <a href="#message" class="nav-link"><span>💌</span> Message</a>
+        <a href="#gallery" class="nav-link"><span>📸</span> Gallery</a>
+        <a href="#special" class="nav-link"><span>🌸</span> Why You</a>
+        <a href="#wishes" class="nav-link"><span>🎂</span> Wishes</a>
+        <a href="#wishCake" class="nav-link"><span>🕯️</span> Make a Wish</a>
+        <a href="#memories" class="nav-link"><span>📸</span> Memories</a>
+        <a href="#surprise" class="nav-link"><span>🔐</span> Surprise</a>
+      </nav>
+
+      <button class="hamburger-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <span class="drawer-title">✨ Jaya's Birthday ✨</span>
+      <button class="close-drawer-btn" id="closeDrawerBtn">&times;</button>
+    </div>
+    <div class="drawer-links">
+      <a href="#hero" class="drawer-link"><span>❤️</span> Home</a>
+      <a href="#reveal" class="drawer-link"><span>💖</span> Special Moment</a>
+      <a href="#message" class="drawer-link"><span>💌</span> Birthday Letter</a>
+      <a href="#gallery" class="drawer-link"><span>📸</span> Beautiful You</a>
+      <a href="#special" class="drawer-link"><span>🌸</span> Why You're Special</a>
+      <a href="#wishes" class="drawer-link"><span>🎂</span> Birthday Wishes</a>
+      <a href="#wishCake" class="drawer-link"><span>🕯️</span> Make a Wish</a>
+      <a href="#memories" class="drawer-link"><span>📸</span> Memory Wall</a>
+      <a href="#surprise" class="drawer-link"><span>🔐</span> Secret Surprise</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================== 1. HERO / OPENING SCREEN ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-glow-sphere sphere-1"></div>
+      <div class="hero-glow-sphere sphere-2"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge animate-fade-down">
+          <span class="badge-sparkle">✨</span>
+          <span>A Magical Celebration</span>
+          <span class="badge-sparkle">✨</span>
+        </div>
+
+        <h1 class="hero-title animate-pop-in">
+          ✨ Happy Birthday <span class="gradient-text hero-name">Jaya</span> ✨
+        </h1>
+
+        <p class="hero-subtitle animate-fade-up">
+          Today is all about you <span class="heart-pulse">❤️</span>
+        </p>
+
+        <!-- Hero Portrait with glowing animated frame -->
+        <div class="hero-portrait-wrapper animate-zoom-in">
+          <div class="portrait-aura"></div>
+          <div class="portrait-orbit">
+            <span class="orbit-heart h1">💖</span>
+            <span class="orbit-heart h2">✨</span>
+            <span class="orbit-heart h3">🌸</span>
+            <span class="orbit-heart h4">🦋</span>
+          </div>
+          <div class="hero-portrait-card">
+            <!-- Jaya's Hero Photo: Replace assets/images/jaya1.jpg if needed -->
+            <img src="assets/images/jaya1.jpg" alt="Jaya - Happy Birthday" class="hero-photo" id="heroPhoto">
+            <div class="portrait-overlay"></div>
+          </div>
+        </div>
+
+        <div class="hero-actions animate-fade-up">
+          <a href="#reveal" class="btn-primary glow-btn" id="openSurpriseBtn">
+            <span class="btn-icon">🎁</span>
+            <span class="btn-text">Open Your Birthday Surprise</span>
+            <span class="btn-shine"></span>
+          </a>
+        </div>
+
+        <div class="scroll-indicator">
+          <span>Scroll down for more magic</span>
+          <div class="mouse-icon">
+            <div class="mouse-wheel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. PHOTO REVEAL SECTION ==================== -->
+    <section class="reveal-section section-padding" id="reveal">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">💖 Cherished Moments</span>
+          <h2 class="section-title">💖 A Little Beautiful Moment</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="reveal-card glass-card reveal-on-scroll">
+          <div class="reveal-grid">
+            <div class="reveal-photo-container">
+              <div class="photo-glow-back"></div>
+              <!-- Jaya's Reveal Photo: Replace assets/images/jaya2.jpg if needed -->
+              <img src="assets/images/jaya2.jpg" alt="Jaya Smiling" class="reveal-photo" loading="lazy">
+              <div class="floating-sticker heart-sticker">❤️</div>
+              <div class="floating-sticker sparkle-sticker">✨</div>
+            </div>
+
+            <div class="reveal-text-container">
+              <div class="quote-badge">🌸 For Jaya</div>
+              <blockquote class="emotional-quote">
+                <span class="quote-mark">“</span>
+                <p class="quote-line-1">Some people are beautiful because of how they look...</p>
+                <p class="quote-line-2">Some are beautiful because of who they are.</p>
+                <p class="quote-line-3 highlight-text">And some are simply Jaya. <span class="heart-pulse">❤️</span></p>
+                <span class="quote-mark end-quote">”</span>
+              </blockquote>
+              <div class="quote-signature">
+                <span class="sig-line"></span>
+                <span class="sig-text">With warmth and admiration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. SPECIAL BIRTHDAY MESSAGE ==================== -->
+    <section class="message-section section-padding" id="message">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">💌 From The Heart</span>
+          <h2 class="section-title">💌 A Special Message For You</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="message-card-wrapper reveal-on-scroll">
+          <div class="glass-card letter-card">
+            <div class="letter-stamp">
+              <span>🎂</span>
+              <small>JAYA</small>
+            </div>
+            <div class="letter-wax-seal">❤️</div>
+
+            <div class="letter-inner">
+              <h3 class="letter-greeting">Dear Jaya,</h3>
+
+              <div class="letter-body" id="typewriterTarget">
+                <!-- Typewriter animated content injected by JavaScript or visible as fallback -->
+                <p class="letter-paragraph">Today is your special day, and I hope you know just how wonderful you are.
+                </p>
+                <p class="letter-paragraph">May your life always be filled with happiness, beautiful moments, genuine
+                  smiles and people who truly care about you.</p>
+                <p class="letter-paragraph">May every dream you have slowly turn into reality.</p>
+                <p class="letter-paragraph">Keep smiling, keep shining and always stay the amazing person you are.</p>
+                <p class="letter-paragraph letter-highlight">Wishing you a very Happy Birthday, Jaya! 🎂❤️✨</p>
+                <p class="letter-paragraph">May this year bring you countless reasons to smile. 💖</p>
+                <p class="letter-paragraph">I AM ALWAYS WITH YOU, JAYA. 💖</p>
+              </div>
+
+              <div class="letter-footer">
+                <button class="btn-secondary replay-btn" id="replayTypewriterBtn" title="Replay Message Animation">
+                  <span>✨ Re-play Message</span>
+                </button>
+                <div class="letter-signoff">
+                  <span class="written-font">Always wishing you the very best, I   Am Always With You, Jaya</span>
+                  <span class="sender-heart">❤️❤️❤️</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. JAYA PHOTO GALLERY ==================== -->
+    <section class="gallery-section section-padding" id="gallery">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">📸 Precious Memories</span>
+          <h2 class="section-title">📸 Beautiful You</h2>
+          <p class="section-subtitle">Every photograph tells a story of your grace, warmth, and infectious smile ✨</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <!-- 9 Polaroid Photo Cards Grid -->
+        <div class="polaroid-gallery">
+
+          <!-- Card 1 -->
+          <div class="polaroid-card tilt-left reveal-on-scroll" data-index="0" data-src="assets/images/jaya1.jpg"
+            data-caption="Simply Beautiful ❤️">
+            <div class="polaroid-pin">📌</div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/jaya1.jpg" alt="Jaya - Simply Beautiful" loading="lazy">
+              <div class="polaroid-hover-badge"><span>🔍 Zoom</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-text">Simply Beautiful ❤️</p>
+              <button class="card-heart-btn" aria-label="Like photo"><span class="heart-icon">💖</span> <span
+                  class="like-count">128</span></button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="polaroid-card tilt-right reveal-on-scroll" data-index="1" data-src="assets/images/jaya2.jpg"
+            data-caption="That Smile ✨">
+            <div class="polaroid-pin">🌸</div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/jaya2.jpg" alt="Jaya - That Smile" loading="lazy">
+              <div class="polaroid-hover-badge"><span>🔍 Zoom</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-text">That Smile ✨</p>
+              <button class="card-heart-btn" aria-label="Like photo"><span class="heart-icon">💖</span> <span
+                  class="like-count">194</span></button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="polaroid-card tilt-straight reveal-on-scroll" data-index="2" data-src="assets/images/jaya3.jpg"
+            data-caption="Pure Happiness 💖">
+            <div class="polaroid-pin">✨</div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/jaya3.jpg" alt="Jaya - Pure Happiness" loading="lazy">
+              <div class="polaroid-hover-badge"><span>🔍 Zoom</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-text">Pure Happiness 💖</p>
+              <button class="card-heart-btn" aria-label="Like photo"><span class="heart-icon">💖</span> <span
+                  class="like-count">245</span></button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="polaroid-card tilt-right reveal-on-scroll" data-index="3" data-src="assets/images/jaya4.jpg"
+            data-caption="Beautiful Moment 🌸">
+            <div class="polaroid-pin">🎀</div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/jaya4.jpg" alt="Jaya - Beautiful Moment" loading="lazy">
+              <div class="polaroid-hover-badge"><span>🔍 Zoom</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-text">Beautiful Moment 🌸</p>
+              <button class="card-heart-btn" aria-label="Like photo"><span class="heart-icon">💖</span> <span
+                  class="like-count">176</span></button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="polaroid-card tilt-left reveal-on-scroll" data-index="4" data-src="assets/images/jaya5.jpg"
+            data-caption="Golden Radiance 🌅">
+            <div class="polaroid-pin">💛</div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/jaya5.jpg" alt="Jaya - Golden Radiance" loading="lazy">
+              <div class="polaroid-hover-badge"><span>🔍 Zoom</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-text">Golden Radiance 🌅</p>
+              <button class="card-heart-btn" aria-label="Like photo"><span class="heart-icon">💖</span> <span
+                  class="like-count">312</span></button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="polaroid-card tilt-straight reveal-on-scroll" data-index="5" data-src="assets/images/jaya6.jpg"
+            data-caption="Always Special ❤️">
+            <div class="polaroid-pin">✨</div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/jaya6.jpg" alt="Jaya - Always Special" loading="lazy">
+              <div class="polaroid-hover-badge"><span>🔍 Zoom</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-text">Always Special ❤️</p>
+              <button class="card-heart-btn" aria-label="Like photo"><span class="heart-icon">💖</span> <span
+                  class="like-count">280</span></button>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="polaroid-card tilt-right reveal-on-scroll" data-index="6" data-src="assets/images/jaya7.jpg"
+            data-caption="Grace & Tradition 🌸">
+            <div class="polaroid-pin">🌺</div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/jaya7.jpg" alt="Jaya - Grace & Tradition" loading="lazy">
+              <div class="polaroid-hover-badge"><span>🔍 Zoom</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-text">Grace & Tradition 🌸</p>
+              <button class="card-heart-btn" aria-label="Like photo"><span class="heart-icon">💖</span> <span
+                  class="like-count">350</span></button>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="polaroid-card tilt-left reveal-on-scroll" data-index="7" data-src="assets/images/jaya8.jpg"
+            data-caption="Pure Joy & Celebration 🎈">
+            <div class="polaroid-pin">🎈</div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/jaya8.jpg" alt="Jaya - Pure Joy" loading="lazy">
+              <div class="polaroid-hover-badge"><span>🔍 Zoom</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-text">Pure Joy & Celebration 🎈</p>
+              <button class="card-heart-btn" aria-label="Like photo"><span class="heart-icon">💖</span> <span
+                  class="like-count">220</span></button>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="polaroid-card tilt-straight reveal-on-scroll" data-index="8" data-src="assets/images/jaya9.jpg"
+            data-caption="Just Jaya ✨">
+            <div class="polaroid-pin">👑</div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/jaya9.jpg" alt="Jaya - Just Jaya" loading="lazy">
+              <div class="polaroid-hover-badge"><span>🔍 Zoom</span></div>
+            </div>
+            <div class="polaroid-caption">
+              <p class="caption-text">Just Jaya ✨</p>
+              <button class="card-heart-btn" aria-label="Like photo"><span class="heart-icon">💖</span> <span
+                  class="like-count">512</span></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. WHY YOU ARE SPECIAL ==================== -->
+    <section class="special-section section-padding" id="special">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">🌸 All The Little Things</span>
+          <h2 class="section-title">🌸 Why You're Special</h2>
+          <p class="section-subtitle">A few of the countless reasons why the world is brighter with you in it ❤️</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="special-cards-grid">
+
+          <div class="special-card glass-card reveal-on-scroll">
+            <div class="card-icon-bubble">❤️</div>
+            <h3 class="card-heading">Your Beautiful Heart</h3>
+            <p class="card-desc">Your genuine warmth, empathy, and pure soul make everyone around you feel valued and
+              safe.</p>
+            <div class="card-glow-line"></div>
+          </div>
+
+          <div class="special-card glass-card reveal-on-scroll">
+            <div class="card-icon-bubble">✨</div>
+            <h3 class="card-heading">Your Beautiful Smile</h3>
+            <p class="card-desc">It effortlessly lights up any room and can turn the gloomiest day into sunshine.</p>
+            <div class="card-glow-line"></div>
+          </div>
+
+          <div class="special-card glass-card reveal-on-scroll">
+            <div class="card-icon-bubble">🌸</div>
+            <h3 class="card-heading">Your Kindness</h3>
+            <p class="card-desc">The gentle, thoughtful way you care for others leaves a soft, lasting impression on
+              every life you touch.</p>
+            <div class="card-glow-line"></div>
+          </div>
+
+          <div class="special-card glass-card reveal-on-scroll">
+            <div class="card-icon-bubble">💖</div>
+            <h3 class="card-heading">Your Positive Energy</h3>
+            <p class="card-desc">Your vibrant spirit and uplifting aura bring hope, peace, and good vibes wherever you
+              go.</p>
+            <div class="card-glow-line"></div>
+          </div>
+
+          <div class="special-card glass-card reveal-on-scroll">
+            <div class="card-icon-bubble">🌟</div>
+            <h3 class="card-heading">Your Presence</h3>
+            <p class="card-desc">Just knowing you're there makes everything feel lighter, easier, and endlessly more
+              meaningful.</p>
+            <div class="card-glow-line"></div>
+          </div>
+
+          <div class="special-card glass-card reveal-on-scroll">
+            <div class="card-icon-bubble">😊</div>
+            <h3 class="card-heading">The Happiness You Bring</h3>
+            <p class="card-desc">You bring laughter, sweet comfort, and unforgettable smiles into everyone's life.</p>
+            <div class="card-glow-line"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. BIRTHDAY WISHES ==================== -->
+    <section class="wishes-section section-padding" id="wishes">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">🎂 Heartfelt Prayers</span>
+          <h2 class="section-title">🎂 Birthday Wishes For You</h2>
+          <p class="section-subtitle">Seven special blessings written with love just for you ✨</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="wishes-timeline">
+
+          <div class="wish-item reveal-on-scroll">
+            <div class="wish-marker">1</div>
+            <div class="wish-card glass-card">
+              <span class="wish-sparkle">✨</span>
+              <p class="wish-text">"May your smile always stay this beautiful. 😊❤️"</p>
+            </div>
+          </div>
+
+          <div class="wish-item reveal-on-scroll">
+            <div class="wish-marker">2</div>
+            <div class="wish-card glass-card">
+              <span class="wish-sparkle">🌸</span>
+              <p class="wish-text">"May happiness find you wherever you go. ✨"</p>
+            </div>
+          </div>
+
+          <div class="wish-item reveal-on-scroll">
+            <div class="wish-marker">3</div>
+            <div class="wish-card glass-card">
+              <span class="wish-sparkle">💖</span>
+              <p class="wish-text">"May every dream in your heart come true. 💖"</p>
+            </div>
+          </div>
+
+          <div class="wish-item reveal-on-scroll">
+            <div class="wish-marker">4</div>
+            <div class="wish-card glass-card">
+              <span class="wish-sparkle">🌺</span>
+              <p class="wish-text">"May your life be filled with beautiful memories. 🌸"</p>
+            </div>
+          </div>
+
+          <div class="wish-item reveal-on-scroll">
+            <div class="wish-marker">5</div>
+            <div class="wish-card glass-card">
+              <span class="wish-sparkle">🎉</span>
+              <p class="wish-text">"May this year bring you endless reasons to smile. 🎉"</p>
+            </div>
+          </div>
+
+          <div class="wish-item reveal-on-scroll">
+            <div class="wish-marker">6</div>
+            <div class="wish-card glass-card">
+              <span class="wish-sparkle">🌟</span>
+              <p class="wish-text">"May every new chapter of your life be more beautiful than the last. ✨"</p>
+            </div>
+          </div>
+
+          <div class="wish-item reveal-on-scroll">
+            <div class="wish-marker">7</div>
+            <div class="wish-card glass-card highlight-wish">
+              <span class="wish-sparkle">👑</span>
+              <p class="wish-text">"Happy Birthday to someone truly special. ❤️"</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. MAKE A WISH (INTERACTIVE CAKE) ==================== -->
+    <section class="wish-cake-section section-padding" id="wishCake">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">🕯️ Interactive Birthday Cake</span>
+          <h2 class="section-title">🕯️ Make a Wish</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="cake-experience-wrapper glass-card reveal-on-scroll">
+          <div class="wish-instruction">
+            <p class="instruction-line">Close your eyes...</p>
+            <p class="instruction-line">Make a beautiful wish...</p>
+            <p class="instruction-line highlight">Then blow out the candle! ❤️</p>
+          </div>
+
+          <!-- Interactive 3D Birthday Cake -->
+          <div class="cake-stage">
+            <div class="cake-container" id="cakeElement" title="Click to blow out the candle!">
+
+              <!-- Candle and Flame -->
+              <div class="candle" id="candle">
+                <div class="flame" id="flame">
+                  <div class="flame-inner"></div>
+                </div>
+                <div class="smoke" id="smoke"></div>
+                <div class="wick"></div>
+                <div class="candle-stick"></div>
+              </div>
+
+              <!-- Cake Tiers -->
+              <div class="cake-tier tier-top">
+                <div class="tier-frosting">
+                  <span class="drip"></span><span class="drip"></span><span class="drip"></span>
+                  <span class="drip"></span><span class="drip"></span>
+                </div>
+                <div class="strawberries">
+                  <span>🍓</span><span>🌸</span><span>🍓</span>
+                </div>
+              </div>
+
+              <div class="cake-tier tier-middle">
+                <div class="tier-frosting">
+                  <span class="drip"></span><span class="drip"></span><span class="drip"></span>
+                  <span class="drip"></span><span class="drip"></span><span class="drip"></span>
+                </div>
+              </div>
+
+              <div class="cake-tier tier-bottom">
+                <div class="cake-text-ribbon">✨ Happy Birthday Jayuuu ✨</div>
+              </div>
+
+              <!-- Cake Plate -->
+              <div class="cake-plate"></div>
+            </div>
+          </div>
+
+          <!-- Blow Candle Button -->
+          <div class="cake-controls">
+            <button class="btn-primary blow-btn" id="blowCandleBtn">
+              <span class="btn-icon">💨</span>
+              <span class="btn-text">Blow Out The Candle</span>
+            </button>
+            <button class="btn-secondary relight-btn hidden" id="relightCandleBtn">
+              <span>🕯️ Relight Candle</span>
+            </button>
+          </div>
+
+          <!-- Wish Sent Reveal Banner -->
+          <div class="wish-sent-banner hidden" id="wishSentBanner">
+            <div class="banner-sparkles">✨ 💖 ✨</div>
+            <h3 class="banner-title">✨ Your wish has been sent to the universe! ✨</h3>
+            <p class="banner-sub">May it come true, Jaya. <span class="heart-pulse">❤️</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. MEMORY WALL & LIGHTBOX ==================== -->
+    <section class="memories-section section-padding" id="memories">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">📸 Interactive Wall</span>
+          <h2 class="section-title">❤️ Little Moments, Beautiful Memories</h2>
+          <p class="section-subtitle">Click on any photo to open the enchanted full-screen memory viewer ✨</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="memory-wall-grid">
+
+          <div class="memory-tile item-large reveal-on-scroll" data-index="0" data-src="assets/images/jaya1.jpg"
+            data-caption="The radiant sparkle of your presence ✨">
+            <img src="assets/images/jaya1.jpg" alt="Jaya Memory 1" loading="lazy">
+            <div class="memory-tile-overlay">
+              <span class="memory-heart">💖</span>
+              <p class="memory-caption">The radiant sparkle of your presence ✨</p>
+              <span class="click-hint">Click to enlarge</span>
+            </div>
+          </div>
+
+          <div class="memory-tile item-tall reveal-on-scroll" data-index="1" data-src="assets/images/jaya2.jpg"
+            data-caption="Warm giggles and sweet birthday celebrations 🎂">
+            <img src="assets/images/jaya2.jpg" alt="Jaya Memory 2" loading="lazy">
+            <div class="memory-tile-overlay">
+              <span class="memory-heart">💖</span>
+              <p class="memory-caption">Warm giggles and sweet birthday celebrations 🎂</p>
+              <span class="click-hint">Click to enlarge</span>
+            </div>
+          </div>
+
+          <div class="memory-tile reveal-on-scroll" data-index="2" data-src="assets/images/jaya3.jpg"
+            data-caption="Blossoming in nature's grace 🌸">
+            <img src="assets/images/jaya3.jpg" alt="Jaya Memory 3" loading="lazy">
+            <div class="memory-tile-overlay">
+              <span class="memory-heart">💖</span>
+              <p class="memory-caption">Blossoming in nature's grace 🌸</p>
+              <span class="click-hint">Click to enlarge</span>
+            </div>
+          </div>
+
+          <div class="memory-tile reveal-on-scroll" data-index="3" data-src="assets/images/jaya4.jpg"
+            data-caption="Cozy coffee talks and radiant laughter ☕">
+            <img src="assets/images/jaya4.jpg" alt="Jaya Memory 4" loading="lazy">
+            <div class="memory-tile-overlay">
+              <span class="memory-heart">💖</span>
+              <p class="memory-caption">Cozy coffee talks and radiant laughter ☕</p>
+              <span class="click-hint">Click to enlarge</span>
+            </div>
+          </div>
+
+          <div class="memory-tile item-wide reveal-on-scroll" data-index="4" data-src="assets/images/jaya5.jpg"
+            data-caption="Sunset golden hour glow on the horizon 🌅">
+            <img src="assets/images/jaya5.jpg" alt="Jaya Memory 5" loading="lazy">
+            <div class="memory-tile-overlay">
+              <span class="memory-heart">💖</span>
+              <p class="memory-caption">Sunset golden hour glow on the horizon 🌅</p>
+              <span class="click-hint">Click to enlarge</span>
+            </div>
+          </div>
+
+          <div class="memory-tile reveal-on-scroll" data-index="5" data-src="assets/images/jaya6.jpg"
+            data-caption="Sparklers lighting up magical night skies ✨">
+            <img src="assets/images/jaya6.jpg" alt="Jaya Memory 6" loading="lazy">
+            <div class="memory-tile-overlay">
+              <span class="memory-heart">💖</span>
+              <p class="memory-caption">Sparklers lighting up magical night skies ✨</p>
+              <span class="click-hint">Click to enlarge</span>
+            </div>
+          </div>
+
+          <div class="memory-tile item-tall reveal-on-scroll" data-index="6" data-src="assets/images/jaya7.jpg"
+            data-caption="Timeless elegance and joyful heritage 🌺">
+            <img src="assets/images/jaya7.jpg" alt="Jaya Memory 7" loading="lazy">
+            <div class="memory-tile-overlay">
+              <span class="memory-heart">💖</span>
+              <p class="memory-caption">Timeless elegance and joyful heritage 🌺</p>
+              <span class="click-hint">Click to enlarge</span>
+            </div>
+          </div>
+
+          <div class="memory-tile reveal-on-scroll" data-index="7" data-src="assets/images/jaya8.jpg"
+            data-caption="Lighter than air with balloons of dreams 🎈">
+            <img src="assets/images/jaya8.jpg" alt="Jaya Memory 8" loading="lazy">
+            <div class="memory-tile-overlay">
+              <span class="memory-heart">💖</span>
+              <p class="memory-caption">Lighter than air with balloons of dreams 🎈</p>
+              <span class="click-hint">Click to enlarge</span>
+            </div>
+          </div>
+
+          <div class="memory-tile item-large reveal-on-scroll" data-index="8" data-src="assets/images/jaya9.jpg"
+            data-caption="Shining bright like the star you are 🌟">
+            <img src="assets/images/jaya9.jpg" alt="Jaya Memory 9" loading="lazy">
+            <div class="memory-tile-overlay">
+              <span class="memory-heart">💖</span>
+              <p class="memory-caption">Shining bright like the star you are 🌟</p>
+              <span class="click-hint">Click to enlarge</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. SECRET SURPRISE ==================== -->
+    <section class="secret-section section-padding" id="surprise">
+      <div class="container">
+        <div class="secret-box-wrapper glass-card reveal-on-scroll">
+          <div class="secret-sparkle-halo"></div>
+          <div class="lock-icon-animated">🔐</div>
+          <h2 class="secret-title">A Locked Secret Note Just For You</h2>
+          <p class="secret-desc">There is one secret wish waiting to be unlocked...</p>
+
+          <button class="btn-primary secret-glow-btn" id="openSecretBtn">
+            <span class="btn-icon">🔐</span>
+            <span class="btn-text">Open Your Secret Surprise</span>
+            <span class="btn-pulse-ring"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10. FINAL PHOTO + BIRTHDAY MESSAGE ==================== -->
+    <section class="final-hero-section section-padding" id="finalHero">
+      <div class="container">
+        <div class="final-hero-content reveal-on-scroll">
+
+          <span class="final-tag">Once Again... ❤️</span>
+          <h2 class="final-grand-title">HAPPY BIRTHDAY JAYA 🎂🎉</h2>
+
+          <!-- Jaya's Centerpiece Masterpiece Photo -->
+          <div class="centerpiece-frame-wrapper">
+            <div class="centerpiece-halo"></div>
+            <div class="floating-elements-orbit">
+              <span class="orbit-petal p1">🌸</span>
+              <span class="orbit-petal p2">💖</span>
+              <span class="orbit-petal p3">✨</span>
+              <span class="orbit-petal p4">🦋</span>
+              <span class="orbit-petal p5">🎂</span>
+              <span class="orbit-petal p6">🎀</span>
+            </div>
+            <div class="centerpiece-card">
+              <!-- Jaya's Best Photo: Replace assets/images/jaya9.jpg if needed -->
+              <img src="assets/images/jaya9.jpg" alt="Jaya Grand Portrait" class="centerpiece-photo" loading="lazy">
+              <div class="centerpiece-glow-border"></div>
+            </div>
+          </div>
+
+          <div class="final-blessing-card glass-card">
+            <p class="blessing-line-1">
+              May your life be as beautiful as your smile,
+            </p>
+            <p class="blessing-line-2">
+              as bright as your dreams,
+            </p>
+            <p class="blessing-line-3">
+              and as special as you are. ✨
+            </p>
+            <div class="blessing-divider">❤️ 🌸 ❤️</div>
+            <p class="blessing-motto">
+              Keep smiling. Keep shining. Always be happy. ❤️
+            </p>
+          </div>
+
+          <!-- ==================== 11. FINAL SURPRISE ANIMATION BUTTON ==================== -->
+          <div class="final-surprise-action">
+            <button class="btn-primary grand-surprise-btn" id="grandSurpriseBtn">
+              <span class="btn-icon">🎁</span>
+              <span class="btn-text">One Last Surprise</span>
+              <span class="btn-sparkle-stars">✨🎉✨</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-heart">Made with infinite love, warmth & smiles for <strong>Jaya</strong> ❤️</p>
+        <p class="footer-date">Happy Birthday Jaya • Today, Tomorrow & Always ✨</p>
+        <button class="back-to-top-btn" id="backToTopBtn" title="Back to Top">
+          <span>↑ Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & LIGHTBOXES ==================== -->
+
+  <!-- 1. FULLSCREEN PHOTO LIGHTBOX -->
+  <div class="lightbox-modal" id="photoLightbox" role="dialog" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close Lightbox">&times;</button>
+
+      <button class="lightbox-nav-btn prev-btn" id="lightboxPrevBtn" aria-label="Previous Photo">❮</button>
+      <button class="lightbox-nav-btn next-btn" id="lightboxNextBtn" aria-label="Next Photo">❯</button>
+
+      <div class="lightbox-content">
+        <div class="lightbox-image-wrapper">
+          <img src="" alt="Jaya Lightbox View" id="lightboxImg" class="lightbox-img">
+          <div class="lightbox-spinner" id="lightboxSpinner"></div>
+        </div>
+        <div class="lightbox-info-bar">
+          <p class="lightbox-caption" id="lightboxCaption">Simply Beautiful ❤️</p>
+          <div class="lightbox-actions">
+            <button class="lightbox-heart-btn" id="lightboxHeartBtn">
+              <span>💖</span> <span id="lightboxHeartCount">Love</span>
+            </button>
+            <span class="lightbox-counter" id="lightboxCounter">1 / 9</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SECRET SURPRISE MODAL -->
+  <div class="secret-modal" id="secretModal" role="dialog" aria-hidden="true">
+    <div class="secret-modal-backdrop" id="secretModalBackdrop"></div>
+    <div class="secret-modal-content glass-card">
+      <button class="modal-close-btn" id="closeSecretBtn" aria-label="Close Secret Note">&times;</button>
+
+      <div class="secret-modal-decor">
+        <span class="decor-heart">💖</span>
+        <span class="decor-sparkle">✨</span>
+        <span class="decor-flower">🌸</span>
+      </div>
+
+      <div class="secret-letter">
+        <h3 class="secret-heading">💌 A Secret Note For Jaya</h3>
+
+        <div class="secret-text-content">
+          <p class="secret-passage">Some people enter our lives...</p>
+          <p class="secret-passage">and somehow make ordinary moments feel a little more special.</p>
+          <div class="secret-divider">✨ ✨ ✨</div>
+          <p class="secret-focus">Jaya, today is your day.</p>
+          <div class="secret-mantra">
+            <p>Keep smiling.</p>
+            <p>Keep shining.</p>
+            <p class="highlight-pink">Keep being you. ❤️✨</p>
+          </div>
+        </div>
+
+        <div class="secret-closing">
+          <p class="sign-text">With lots of love & best wishes ❤️</p>
+          <div class="seal-emojis">🎂 🌸 💖 👑 🦋</div>
+        </div>
+
+        <button class="btn-primary secret-close-action" id="closeSecretBtn2">
+          <span>Close & Cherish ❤️</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. GRAND CELEBRATION FULLSCREEN OVERLAY -->
+  <div class="celebration-overlay" id="celebrationOverlay" aria-hidden="true">
+    <div class="celebration-content glass-card">
+      <button class="modal-close-btn" id="closeCelebrationBtn">&times;</button>
+
+      <div class="celebration-badge">🎉 BIRTHDAY EXTRAVAGANZA 🎉</div>
+
+      <div class="celebration-photo-ring">
+        <img src="assets/images/jaya1.jpg" alt="Jaya Celebration" class="celebration-mini-photo">
+      </div>
+
+      <h2 class="celebration-title">🎂 HAPPY BIRTHDAY JAYU ❤️</h2>
+
+      <p class="celebration-message">
+        Today, tomorrow and every day —<br>
+        <strong>you deserve happiness, ✨</strong> <br>
+        <strong>I Miss You Jaya 🥺🥺</strong>
+      </p>
+
+      <div class="celebration-emojis-banner">
+        <span>🎉</span><span>🎂</span><span>💖</span><span>🌸</span><span>✨</span><span>🎈</span><span>🎁</span>
+      </div>
+
+      <div class="celebration-actions">
+        <button class="btn-primary" id="burstMoreConfettiBtn">
+          <span>🎊 Burst More Joy!</span>
+        </button>
+        <button class="btn-secondary" id="finishCelebrationBtn">
+          <span>Close Celebration ✨</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
